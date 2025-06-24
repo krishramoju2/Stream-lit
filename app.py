@@ -4,7 +4,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 # ---- Genius API Setup ----
-GENIUS_API_TOKEN = "1sIQ_ISmltVhZf_wKbgKKULHpu5Bc5ATiWFIJayHaAiba3pd2VqWfqmasG7PFPdm"
+GENIUS_API_TOKEN = "d27WCGIsxtIQkieBY7ro-biRexyjZ6atqEyY-gyoTP7SBEYmXEbZH2rWBTFCaEll"
 genius = lyricsgenius.Genius(GENIUS_API_TOKEN, skip_non_songs=True, excluded_terms=["(Remix)", "(Live)"])
 genius.verbose = False  # optional: hides logs in console
 
