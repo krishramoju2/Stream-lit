@@ -4,7 +4,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 # ---- Genius API Setup ----
-GENIUS_API_TOKEN = "your_genius_api_token_here"
+GENIUS_API_TOKEN = "1sIQ_ISmltVhZf_wKbgKKULHpu5Bc5ATiWFIJayHaAiba3pd2VqWfqmasG7PFPdm"
 genius = lyricsgenius.Genius(GENIUS_API_TOKEN, skip_non_songs=True, excluded_terms=["(Remix)", "(Live)"])
 
 # ---- Streamlit UI ----
