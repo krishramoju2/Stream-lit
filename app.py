@@ -3,15 +3,12 @@ import lyricsgenius
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-
-
-
-
 # ---- Genius API Setup ----
 GENIUS_API_TOKEN = "1sIQ_ISmltVhZf_wKbgKKULHpu5Bc5ATiWFIJayHaAiba3pd2VqWfqmasG7PFPdm"
 genius = lyricsgenius.Genius(GENIUS_API_TOKEN, skip_non_songs=True, excluded_terms=["(Remix)", "(Live)"])
+genius.verbose = False  # optional: hides logs in console
 
-# ---- Streamlit UI ----
+# ---- Streamlit UI Setup ----
 st.set_page_config(page_title="Taylor Swift Lyrics Visualizer", layout="centered")
 
 st.title("🎤 Sing with Streamlit: Taylor Swift Lyrics Visualizer")
@@ -27,7 +24,7 @@ if st.button("Fetch Lyrics"):
         with st.spinner("Fetching lyrics..."):
             try:
                 song = genius.search_song(song_title, "Taylor Swift")
-                if song:
+                if song and song.lyrics:
                     lyrics = song.lyrics
                     st.subheader("🎶 Lyrics")
                     st.text_area("Lyrics", lyrics, height=300)
@@ -41,11 +38,6 @@ if st.button("Fetch Lyrics"):
                     ax.axis("off")
                     st.pyplot(fig)
                 else:
-                    st.error("Song not found. Please try a different title.")
+                    st.error("Song not found or lyrics not available.")
             except Exception as e:
                 st.error(f"Error: {e}")
-
-genius = lyricsgenius.Genius("1sIQ_ISmltVhZf_wKbgKKULHpu5Bc5ATiWFIJayHaAiba3pd2VqWfqmasG7PFPdm")
-song = genius.search_song("Love Story", "Taylor Swift")
-print(song.lyrics)
-
