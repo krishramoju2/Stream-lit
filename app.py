@@ -3,6 +3,10 @@ import lyricsgenius
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
+
+
+
+
 # ---- Genius API Setup ----
 GENIUS_API_TOKEN = "1sIQ_ISmltVhZf_wKbgKKULHpu5Bc5ATiWFIJayHaAiba3pd2VqWfqmasG7PFPdm"
 genius = lyricsgenius.Genius(GENIUS_API_TOKEN, skip_non_songs=True, excluded_terms=["(Remix)", "(Live)"])
@@ -40,3 +44,8 @@ if st.button("Fetch Lyrics"):
                     st.error("Song not found. Please try a different title.")
             except Exception as e:
                 st.error(f"Error: {e}")
+
+genius = lyricsgenius.Genius("1sIQ_ISmltVhZf_wKbgKKULHpu5Bc5ATiWFIJayHaAiba3pd2VqWfqmasG7PFPdm")
+song = genius.search_song("Love Story", "Taylor Swift")
+print(song.lyrics)
+
