@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import re
 
 # ---- Genius API Setup ----
-GENIUS_API_TOKEN = "iet8moSWSDWEzmKx8EOAOWDq2bRfp9ns4RcbNFHtYDx84W_JdkopJwWKYSi8fUfv"
+GENIUS_API_TOKEN = "HG8rq3W5ymRQJC5UXF6bpWPxJXJFTK9SydGUyh_Mn2xDujZFr8LNMPKDuf7hdx8K"
 try:
     genius = lyricsgenius.Genius(GENIUS_API_TOKEN, 
                                skip_non_songs=True, 
